@@ -31,17 +31,17 @@ $statement->closeCursor();
             <input type="category_id" name="category_id"
                    value="<?php echo $record['categoryID']; ?>">
             <br>
-            <label>Code:</label>
-            <input type="input" name="code"
-                   value="<?php echo $record['code']; ?>">
+            <label>Description:</label>
+            <input type="input" name="description"
+                   value="<?php echo $record['description']; ?>">
             <br>
             <label>Name:</label>
             <input type="input" name="name"
                    value="<?php echo $record['name']; ?>">
             <br>
-            <label>Price:</label>
-            <input type="input" name="price"
-                   value="<?php echo $record['price']; ?>">
+            <label>country:</label>
+            <input type="input" name="country"
+                   value="<?php echo $record['country']; ?>">
             <br>
             <label>Image:</label>
             <input type="file" name="image" accept="image/*" />

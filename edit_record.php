@@ -2,13 +2,14 @@
 // Get the data
 $record_id = filter_input(INPUT_POST, 'record_id', FILTER_VALIDATE_INT);
 $category_id = filter_input(INPUT_POST, 'category_id', FILTER_VALIDATE_INT);
-$code = filter_input(INPUT_POST, 'code');
+$description = filter_input(INPUT_POST, 'description');
 $name = filter_input(INPUT_POST, 'name');
-$price = filter_input(INPUT_POST, 'price', FILTER_VALIDATE_FLOAT);
+$country = filter_input(INPUT_POST, 'country');
+$image = filter_input(INPUT_POST, 'image');
 // Validate inputs
 if ($record_id == NULL || $record_id == FALSE || $category_id == NULL ||
-$category_id == FALSE || empty($code) || empty($name) ||
-$price == NULL || $price == FALSE) {
+$category_id == FALSE || empty($description) || empty($name) || empty($country) 
+) {
 $error = "Invalid data. Check all fields and try again.";
 include('error.php');
 } else {
@@ -44,16 +45,16 @@ $image = $original_image; // old image from database
 require_once('database.php');
 $query = 'UPDATE records
 SET categoryID = :category_id,
-code = :code,
+description = :description,
 name = :name,
-price = :price,
+country = :country,
 image = :image
 WHERE recordID = :record_id';
 $statement = $db->prepare($query);
 $statement->bindValue(':category_id', $category_id);
-$statement->bindValue(':code', $code);
+$statement->bindValue(':description', $description);
 $statement->bindValue(':name', $name);
-$statement->bindValue(':price', $price);
+$statement->bindValue(':country', $country);
 $statement->bindValue(':image', $image);
 $statement->bindValue(':record_id', $record_id);
 $statement->execute();

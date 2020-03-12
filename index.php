@@ -39,17 +39,17 @@ $statement3->closeCursor();
 <html>
 <!-- the head section -->
 <head>
-<title>PHP CRUD</title>
+<title>My Tourist Website</title>
 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <!-- the body section -->
 <body>
-<header><h1>PHP CRUD</h1></header>
+<header><h1>My tourist Website</h1></header>
 <main>
-<h1>Record List</h1>
+<h1>Places to visit</h1>
 <aside>
 <!-- display a list of categories in the sidebar-->
-<h2>Categories</h2>
+<h2>Continents</h2>
 <nav>
 <ul>
 <?php foreach ($categories as $category) : ?>
@@ -68,8 +68,8 @@ $statement3->closeCursor();
 <tr>
 <th>Image</th>
 <th>Name</th>
-<th>Code</th>
-<th>Price</th>
+<th>Country</th>
+<th>description</th>
 <th>Delete</th>
 <th>Edit</th>
 </tr>
@@ -77,8 +77,8 @@ $statement3->closeCursor();
 <tr>
 <td><img src="image_uploads/<?php echo $record['image']; ?>" width="100px" height="100px" /></td>
 <td><?php echo $record['name']; ?></td>
-<td><?php echo $record['code']; ?></td>
-<td><?php echo $record['price']; ?></td>
+<td><?php echo $record['country']; ?></td>
+<td><?php echo $record['description']; ?></td>
 <td><form action="delete_record.php" method="post"
 id="delete_record_form">
 <input type="hidden" name="record_id"
